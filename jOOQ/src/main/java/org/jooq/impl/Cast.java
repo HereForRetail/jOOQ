@@ -53,6 +53,7 @@ import static org.jooq.impl.SQLDataType.DOUBLE;
 import static org.jooq.impl.SQLDataType.FLOAT;
 import static org.jooq.impl.SQLDataType.REAL;
 import static org.jooq.impl.SQLDataType.VARCHAR;
+import static org.jooq.impl.Tools.castToBigQuerySpecificTypeIfNeeded;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -71,6 +72,7 @@ import org.jooq.QueryPart;
 import org.jooq.RenderContext.CastMode;
 // ...
 // ...
+import org.jooq.SQLDialect;
 import org.jooq.impl.QOM.UTransient;
 
 /**
@@ -343,8 +345,12 @@ final class Cast<T> extends AbstractField<T> implements QOM.Cast<T> {
 
 
 
-            else
-                ctx.sql(type.getCastTypeName(ctx.configuration()));
+            else {
+				DataType<?> castType = ctx.dialect() == SQLDialect.BIGQUERY
+					? castToBigQuerySpecificTypeIfNeeded(type)
+					: type;
+				ctx.sql(castType.getCastTypeName(ctx.configuration()));
+			}
 
             ctx.sql(')');
         }

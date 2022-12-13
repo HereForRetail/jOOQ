@@ -348,6 +348,7 @@ import io.r2dbc.spi.R2dbcException;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import org.jooq.util.bigquery.BigQueryDataType;
 
 /**
  * General internal jOOQ utilities
@@ -5412,8 +5413,29 @@ final class Tools {
         toSQLDDLTypeDeclaration0(ctx, type);
     }
 
+	public static DataType<?> castToBigQuerySpecificTypeIfNeeded(DataType<?> type) {
+		if (type.getType() == String.class) {
+			return BigQueryDataType.STRING;
+		}
+		if (type.getType() == Double.class || type.getType() == Float.class) {
+			return BigQueryDataType.FLOAT64;
+		}
+		return type;
+	}
+
 
     private static final void toSQLDDLTypeDeclaration0(Context<?> ctx, DataType<?> type) {
+		if (ctx.dialect() == BIGQUERY) {
+			// Translate some types to corresponding BigQuery ones
+			if (type instanceof ArrayDataType) {
+				DataType<?> arrayComponentDataType = type.getArrayComponentDataType();
+				arrayComponentDataType = castToBigQuerySpecificTypeIfNeeded(arrayComponentDataType);
+				type = new ArrayDataType<>(arrayComponentDataType);
+			} else {
+				type = castToBigQuerySpecificTypeIfNeeded(type);
+			}
+		}
+
         DataType<?> elementType = type instanceof ArrayDataType
             ? ((ArrayDataType<?>) type).elementType
             : type;

@@ -111,6 +111,7 @@ import org.jooq.types.YearToSecond;
 // ...
 // ...
 // ...
+import org.jooq.util.bigquery.BigQueryDataType;
 import org.jooq.util.cubrid.CUBRIDDataType;
 // ...
 import org.jooq.util.derby.DerbyDataType;
@@ -860,6 +861,9 @@ public final class SQLDataType {
 
             Class.forName(PostgresDataType.class.getName());
             initJSR310Types(POSTGRES);
+
+			Class.forName(BigQueryDataType.class.getName());
+			initJSR310Types(BIGQUERY);
 
             Class.forName(SQLiteDataType.class.getName());
             initJSR310Types(SQLITE);

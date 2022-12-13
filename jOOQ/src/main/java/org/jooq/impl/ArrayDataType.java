@@ -38,14 +38,12 @@
 package org.jooq.impl;
 
 import static org.jooq.impl.Tools.CTX;
-
 import org.jooq.CharacterSet;
 import org.jooq.Collation;
 import org.jooq.Configuration;
 import org.jooq.DataType;
 import org.jooq.Field;
 import org.jooq.Nullability;
-import org.jooq.SQLDialect;
 import org.jooq.impl.QOM.GenerationOption;
 
 /**
@@ -157,6 +155,7 @@ final class ArrayDataType<T> extends DefaultDataType<T[]> {
 
             case POSTGRES:
             case BIGQUERY:
+				return "ARRAY<" + dataType + ">";
             case YUGABYTEDB:
                 return dataType + "[]";
 
