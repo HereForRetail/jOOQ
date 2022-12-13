@@ -136,6 +136,7 @@ implements
             case FIREBIRD:
             case IGNITE:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(function(N_COALESCE, getDataType(), value, defaultValue));
                 break;

@@ -321,6 +321,7 @@ final class Alias<Q extends QueryPart> extends AbstractQueryPart implements UEmp
 
                 case HSQLDB:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
                     // The javac compiler doesn't like casting of generics
                     Object o = wrapped;

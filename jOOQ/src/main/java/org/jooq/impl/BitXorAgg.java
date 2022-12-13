@@ -275,6 +275,7 @@ implements
             case MARIADB:
             case MYSQL:
             case POSTGRES:
+            case BIGQUERY:
                 ctx.visit(N_BIT_XOR);
                 break;
 

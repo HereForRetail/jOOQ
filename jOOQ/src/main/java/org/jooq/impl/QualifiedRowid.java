@@ -103,6 +103,7 @@ implements
                 break;
 
             case POSTGRES:
+            case BIGQUERY:
                 ctx.visit(table.getQualifiedName().append(systemName("ctid")));
                 break;
 

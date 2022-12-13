@@ -118,6 +118,7 @@ implements
             case DERBY:
             case HSQLDB:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(DSL.repeat(DSL.inline(" "), count));
                 break;

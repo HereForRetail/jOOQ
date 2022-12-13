@@ -113,6 +113,7 @@ final class QualifiedRecordConstant<R extends QualifiedRecord<R>> extends Abstra
             // Due to lack of UDT support in the Postgres JDBC drivers, all UDT's
             // have to be inlined
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 toSQLInline(ctx);
                 break;
@@ -133,6 +134,7 @@ final class QualifiedRecordConstant<R extends QualifiedRecord<R>> extends Abstra
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(K_ROW);
                 break;
@@ -159,6 +161,7 @@ final class QualifiedRecordConstant<R extends QualifiedRecord<R>> extends Abstra
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.sql("::").visit(value.getQualifier());
                 break;
@@ -171,6 +174,7 @@ final class QualifiedRecordConstant<R extends QualifiedRecord<R>> extends Abstra
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 return "ROW";
 
@@ -198,6 +202,7 @@ final class QualifiedRecordConstant<R extends QualifiedRecord<R>> extends Abstra
             // Postgres cannot bind a complete structured type. The type is
             // inlined instead: ROW(.., .., ..)
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:  {
                 for (Field<?> field : value.fields())
                     ctx.visit(val(value.get(field)));

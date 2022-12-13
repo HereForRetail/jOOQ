@@ -330,6 +330,7 @@ final class InsertQueryImpl<R extends Record> extends AbstractStoreQuery<R> impl
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case SQLITE:
                 case YUGABYTEDB: {
                     ctx.data(DATA_MANDATORY_WHERE_CLAUSE, ctx.family() == SQLITE, c -> toSQLInsert(c));
@@ -502,6 +503,7 @@ final class InsertQueryImpl<R extends Record> extends AbstractStoreQuery<R> impl
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case SQLITE:
                 case YUGABYTEDB: {
 

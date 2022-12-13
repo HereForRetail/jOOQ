@@ -128,6 +128,7 @@ final class TruncDate<T> extends AbstractField<T> implements UNotYetImplemented 
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 switch (part) {
                     case YEAR:   keyword = "year";   break;

@@ -446,6 +446,7 @@ implements
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                 default:
                     return Types.OTHER;

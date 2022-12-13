@@ -156,6 +156,7 @@ final class ArrayDataType<T> extends DefaultDataType<T[]> {
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 return dataType + "[]";
 

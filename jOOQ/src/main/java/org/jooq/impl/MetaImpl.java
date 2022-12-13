@@ -358,6 +358,7 @@ final class MetaImpl extends AbstractMeta {
 
 
                     case POSTGRES:
+                    case BIGQUERY:
                     case YUGABYTEDB:
                         types = new String[] {
                             "FOREIGN TABLE",

@@ -100,6 +100,7 @@ final class RegexpLike extends AbstractCondition implements QOM.RegexpLike {
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.sql('(').visit(search).sql(" ~ ").visit(pattern).sql(')');
                 break;

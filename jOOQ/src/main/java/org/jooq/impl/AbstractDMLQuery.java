@@ -1070,6 +1070,7 @@ abstract class AbstractDMLQuery<R extends Record> extends AbstractRowCountQuery 
                 // in the Postgres JDBC driver
                 case FIREBIRD:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
                     rs = executeReturningQuery(ctx, listener);
                     break;

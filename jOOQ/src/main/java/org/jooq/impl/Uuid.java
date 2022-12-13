@@ -109,6 +109,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
                 ctx.visit(function(N_GEN_RANDOM_UUID, getDataType()));
                 break;
 

@@ -103,6 +103,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 acceptPostgres(ctx);
                 break;

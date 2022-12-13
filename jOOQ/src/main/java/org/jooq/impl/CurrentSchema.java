@@ -133,6 +133,7 @@ implements
 
             case HSQLDB:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(K_CURRENT_SCHEMA);
                 break;

@@ -74,6 +74,7 @@ final class RegexpReplace extends AbstractField<String> implements UNotYetImplem
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(N_REGEXP_REPLACE).sql('(').visit(field).sql(", ").visit(pattern).sql(", ").visit(replacement);
 

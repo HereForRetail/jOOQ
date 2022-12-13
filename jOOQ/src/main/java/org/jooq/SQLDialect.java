@@ -306,6 +306,7 @@ public enum SQLDialect {
      * official {@link #REDSHIFT} support, instead.
      */
     POSTGRES("Postgres", false, true),
+	BIGQUERY("BigQuery", false, true),
 
 
 
@@ -1266,6 +1267,7 @@ public enum SQLDialect {
 
                 case MYSQL:       return "MySQL";
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:  return "PostgreSQL";
 
                 default:          return null;
@@ -1341,6 +1343,7 @@ public enum SQLDialect {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:    return "org.hibernate.dialect.PostgreSQL94Dialect";
                 case SQLITE:        return null;
 

@@ -122,6 +122,7 @@ implements
             case MARIADB:
             case MYSQL:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(DSL.exp(one()));
                 break;

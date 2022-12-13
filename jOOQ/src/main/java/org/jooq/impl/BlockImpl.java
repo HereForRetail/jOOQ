@@ -161,6 +161,7 @@ final class BlockImpl extends AbstractRowCountQuery implements Block {
             }
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 bodyAsString(ctx, K_DO, c -> accept0(c));
                 break;

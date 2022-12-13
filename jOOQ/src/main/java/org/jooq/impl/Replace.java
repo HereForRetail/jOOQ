@@ -153,6 +153,7 @@ implements
             case MARIADB:
             case MYSQL:
             case POSTGRES:
+            case BIGQUERY:
             case SQLITE:
             case YUGABYTEDB:
                 if (replace == null)

@@ -773,6 +773,7 @@ final class Expression<T> extends AbstractTransformable<T> implements UOperator2
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
 
                     // This seems to be the most reliable way to avoid issues

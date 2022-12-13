@@ -119,6 +119,7 @@ implements
 
             case DERBY:
             case POSTGRES:
+            case BIGQUERY:
             case SQLITE:
             case YUGABYTEDB:
                 ctx.visit(function(N_RANDOM, getDataType()));

@@ -183,6 +183,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(function(N_JSONB_PATH_QUERY_FIRST, json.getDataType(), castIfNeeded(json, JSONB), DSL.field("{0}::jsonpath", path)));
                 break;

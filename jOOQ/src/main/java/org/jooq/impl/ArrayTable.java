@@ -181,6 +181,7 @@ final class ArrayTable extends AbstractTable<Record> implements UNotYetImplement
 
             case HSQLDB:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 return new PostgresHSQLDBTable().as(alias, fieldAliases);
 

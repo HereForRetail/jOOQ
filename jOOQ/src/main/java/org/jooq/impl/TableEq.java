@@ -99,6 +99,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 ctx.sql('(').visit(arg1).sql(" = ").visit(arg2).sql(')');
                 break;

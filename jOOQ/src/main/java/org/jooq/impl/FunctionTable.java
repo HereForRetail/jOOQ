@@ -92,6 +92,7 @@ final class FunctionTable<R extends Record> extends AbstractTable<R> implements 
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 ctx.visit(function);
                 break;

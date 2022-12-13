@@ -1328,6 +1328,7 @@ implements
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     toPostgresInsertOnConflict(ctx);
                     break;

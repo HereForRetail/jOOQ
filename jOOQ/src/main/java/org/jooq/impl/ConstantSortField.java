@@ -77,6 +77,7 @@ final class ConstantSortField<T> extends CustomField<T> {
             case DERBY:
             case HSQLDB:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.sql('(').visit(select(one())).sql(')');
                 break;

@@ -128,6 +128,7 @@ final class XMLQuery extends AbstractField<XML> implements XMLQueryPassingStep, 
     public final void accept(Context<?> ctx) {
         switch (ctx.family()) {
             case POSTGRES:
+            case BIGQUERY:
                 Field<XML> x = DSL.field(DSL.name("x"), XML);
 
                 ctx.sql('(').visit(

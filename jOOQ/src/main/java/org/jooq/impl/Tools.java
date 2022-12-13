@@ -4671,6 +4671,7 @@ final class Tools {
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 if (increment(ctx.data(), DATA_BLOCK_NESTING))
                     ctx.visit(K_DO).sql(" $$").formatSeparator();
@@ -4703,6 +4704,7 @@ final class Tools {
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.formatIndentEnd().formatSeparator()
                    .visit(K_END);
@@ -5104,6 +5106,7 @@ final class Tools {
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 begin(ctx, c -> {
                     String sqlstate;
@@ -5236,6 +5239,7 @@ final class Tools {
                 case HSQLDB:    ctx.sql(' ').visit(K_GENERATED).sql(' ').visit(K_BY).sql(' ').visit(K_DEFAULT).sql(' ').visit(K_AS).sql(' ').visit(K_IDENTITY).sql('(').visit(K_START_WITH).sql(" 1)"); break;
                 case SQLITE:    ctx.sql(' ').visit(K_PRIMARY_KEY).sql(' ').visit(K_AUTOINCREMENT); break;
                 case POSTGRES:
+                case BIGQUERY:
                     switch (ctx.dialect()) {
 
 
@@ -5243,6 +5247,7 @@ final class Tools {
 
 
                         case POSTGRES:
+                        case BIGQUERY:
                                 ctx.sql(' ').visit(K_GENERATED).sql(' ').visit(K_BY).sql(' ').visit(K_DEFAULT).sql(' ').visit(K_AS).sql(' ').visit(K_IDENTITY); break;
                     }
                     break;
@@ -5476,6 +5481,7 @@ final class Tools {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
 
                     // [#7597] but only if the EnumType.getSchema() value is present
@@ -6422,6 +6428,7 @@ final class Tools {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return ParseNameCase.LOWER_IF_UNQUOTED;
 
@@ -6455,6 +6462,7 @@ final class Tools {
 
                 case H2:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return NestedCollectionEmulation.JSONB;
 

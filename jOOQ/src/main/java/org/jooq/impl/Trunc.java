@@ -129,6 +129,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(castIfNeeded(
                     DSL.function(N_TRUNC, NUMERIC,

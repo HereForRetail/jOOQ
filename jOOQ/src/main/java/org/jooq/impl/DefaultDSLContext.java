@@ -4253,6 +4253,7 @@ public class DefaultDSLContext extends AbstractScope implements DSLContext, Seri
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 return fetchValue(field("lastval()", BigInteger.class));
 

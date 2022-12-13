@@ -233,6 +233,7 @@ final class DateDiff<T> extends AbstractField<Integer> implements UNotYetImpleme
 
             case CUBRID:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 switch (p) {
                     case MILLENNIUM:
@@ -262,6 +263,7 @@ final class DateDiff<T> extends AbstractField<Integer> implements UNotYetImpleme
 
 
                             case POSTGRES:
+                            case BIGQUERY:
                             case YUGABYTEDB:
                                 if (endDate.getDataType().isDate() && startDate.getDataType().isDate())
                                     ctx.sql('(').visit(endDate).sql(" - ").visit(startDate).sql(')');

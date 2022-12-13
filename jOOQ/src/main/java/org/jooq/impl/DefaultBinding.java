@@ -752,6 +752,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                         case POSTGRES:
+                        case BIGQUERY:
                         case YUGABYTEDB: {
                             return true;
                         }
@@ -771,6 +772,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
                     case H2:
                     case HSQLDB:
                     case POSTGRES:
+                    case BIGQUERY:
                     case YUGABYTEDB:
                         return true;
                 }
@@ -788,6 +790,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                     case POSTGRES:
+                    case BIGQUERY:
                     case YUGABYTEDB:
                         return true;
                 }
@@ -1246,6 +1249,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
 
                     // Postgres needs explicit casting for enum (array) types
@@ -1266,6 +1270,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
                     ctx.statement().setString(ctx.index(), toPGArrayString(value));
                     break;
@@ -1305,6 +1310,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return pgGetArray(ctx, ctx.resultSet(), dataType, ctx.index());
 
@@ -1775,6 +1781,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return Types.BINARY;
 
@@ -2072,6 +2079,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     ctx.render()
                        .sql("E'")
@@ -2176,6 +2184,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return Types.BINARY;
 
@@ -3777,6 +3786,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return pgNewRecord(ctx, dataType.getType(), (AbstractRow<Record>) dataType.getRow(), ctx.resultSet().getObject(ctx.index()));
 
@@ -3791,6 +3801,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return pgNewRecord(ctx, dataType.getType(), (AbstractRow<Record>) dataType.getRow(), ctx.statement().getObject(ctx.index()));
 
@@ -4618,6 +4629,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
                 case H2:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
                     ctx.statement().setObject(ctx.index(), value);
                     break;
@@ -4656,6 +4668,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
                 case H2:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return Convert.convert(ctx.resultSet().getObject(ctx.index()), UUID.class);
 
@@ -4685,6 +4698,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
                 case H2:
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return (UUID) ctx.statement().getObject(ctx.index());
 
@@ -4714,6 +4728,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return Types.OTHER;
 

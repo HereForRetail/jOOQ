@@ -173,7 +173,8 @@ final class Limit extends AbstractQueryPart implements UTransient {
             case FIREBIRD:
             case H2:
             case MARIADB:
-            case POSTGRES: {
+            case POSTGRES:
+            case BIGQUERY: {
 
                 // [#8415] For backwards compatibility reasons, we generate standard
                 //         OFFSET .. FETCH syntax on H2 only when strictly needed

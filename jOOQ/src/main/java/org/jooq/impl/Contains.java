@@ -100,6 +100,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 // [#1107] Some dialects support "contains" operations for ARRAYs
                 // [#5929] Check both sides of the operation for array types

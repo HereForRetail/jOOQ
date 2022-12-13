@@ -1082,6 +1082,7 @@ implements
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     alterColumnTypeAndNullabilityInBlock(ctx);
                     return;
@@ -1458,6 +1459,7 @@ implements
 
                     case FIREBIRD:
                     case POSTGRES:
+                    case BIGQUERY:
                     case YUGABYTEDB:
                         ctx.sql(' ').visit(K_TYPE);
                         break;
@@ -1852,6 +1854,7 @@ implements
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB: {
                     AlterTableAlterStep<?> step = c1.dsl().alterTable(table).alterColumn(alterColumn);
                     c1.visit(alterColumnType.nullable() ? step.dropNotNull() : step.setNotNull())

@@ -116,6 +116,7 @@ implements
             case MARIADB:
             case MYSQL:
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(idiv(
                     isub(DSL.exp(imul(number, two())), one()),

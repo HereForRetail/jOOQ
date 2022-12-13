@@ -238,6 +238,7 @@ public class JDBCUtils {
             case MYSQL:
                 return mysqlDialect(majorVersion, minorVersion, productVersion);
             case POSTGRES:
+            case BIGQUERY:
                 return postgresDialect(majorVersion, minorVersion);
         }
 
@@ -515,6 +516,7 @@ public class JDBCUtils {
             case MYSQL:
                 return "com.mysql.cj.jdbc.Driver";
             case POSTGRES:
+            case BIGQUERY:
                 return "org.postgresql.Driver";
             case SQLITE:
                 return "org.sqlite.JDBC";

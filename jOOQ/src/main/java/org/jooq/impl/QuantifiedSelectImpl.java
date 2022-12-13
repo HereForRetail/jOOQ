@@ -140,6 +140,7 @@ final class QuantifiedSelectImpl<R extends Record> extends AbstractQueryPart imp
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case YUGABYTEDB:
                     return array;
 

@@ -9606,6 +9606,7 @@ final class DefaultParseContext extends AbstractScope implements ParseContext {
 
 
                 case POSTGRES:
+                case BIGQUERY:
                 case SQLITE:
                 case YUGABYTEDB:
                     return f2 == null ? log10(f1) : log(f2, f1);
@@ -10584,6 +10585,7 @@ final class DefaultParseContext extends AbstractScope implements ParseContext {
 
 
                     case POSTGRES:
+                    case BIGQUERY:
                     case YUGABYTEDB:
                         first = true;
                         break;

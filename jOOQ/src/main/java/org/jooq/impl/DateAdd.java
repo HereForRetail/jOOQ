@@ -196,6 +196,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB: {
                 switch (datePart) {
                     case YEAR:   string = "1 year";   break;

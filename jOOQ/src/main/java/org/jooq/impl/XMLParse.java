@@ -101,6 +101,7 @@ final class XMLParse extends AbstractField<XML> implements QOM.XMLParse {
 
 
             case POSTGRES:
+            case BIGQUERY:
             default:
                 acceptStandard(ctx, documentOrContent, content);
                 break;

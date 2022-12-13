@@ -144,6 +144,7 @@ implements
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
                 if (onNull == JSONOnNull.ABSENT_ON_NULL && !mapped.isEmpty()) {
                     Row1[] rows = map(fields, f -> row(f), Row1[]::new);

@@ -127,6 +127,7 @@ final class TimestampDiff<T> extends AbstractField<DayToSecond> implements QOM.T
 
 
             case POSTGRES:
+            case BIGQUERY:
             case YUGABYTEDB:
 
                 // [#4481] Parentheses are important in case this expression is

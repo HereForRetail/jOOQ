@@ -114,6 +114,7 @@ implements
             case IGNITE:
             case MARIADB:
             case POSTGRES:
+            case BIGQUERY:
             case SQLITE:
             case YUGABYTEDB:
                 ctx.visit(N_MIN);
