@@ -42,6 +42,7 @@ import org.jooq.impl.DSL;
 import org.jetbrains.annotations.*;
 
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 
 import java.util.Collection;
 

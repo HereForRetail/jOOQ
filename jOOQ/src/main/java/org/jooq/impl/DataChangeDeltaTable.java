@@ -43,6 +43,7 @@ package org.jooq.impl;
 // ...
 import static org.jooq.SQLDialect.H2;
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.impl.DSL.name;
 import static org.jooq.impl.DSL.resultQuery;

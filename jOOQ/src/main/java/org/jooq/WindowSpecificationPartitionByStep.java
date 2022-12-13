@@ -51,6 +51,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -102,14 +103,14 @@ public interface WindowSpecificationPartitionByStep extends WindowSpecificationO
      * Add a <code>PARTITION BY</code> clause to the window specification.
      */
     @NotNull
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationOrderByStep partitionBy(Field<?>... fields);
 
     /**
      * Add a <code>PARTITION BY</code> clause to the window specification.
      */
     @NotNull
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationOrderByStep partitionBy(Collection<? extends Field<?>> fields);
 
     /**
@@ -122,6 +123,6 @@ public interface WindowSpecificationPartitionByStep extends WindowSpecificationO
      */
     @Deprecated(forRemoval = true, since = "3.10")
     @NotNull
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationOrderByStep partitionByOne();
 }

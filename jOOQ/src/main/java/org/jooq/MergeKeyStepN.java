@@ -48,6 +48,7 @@ import static org.jooq.SQLDialect.HSQLDB;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -82,7 +83,7 @@ public interface MergeKeyStepN<R extends Record> extends MergeValuesStepN<R> {
      * <code>PRIMARY KEY</code>.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     MergeValuesStepN<R> key(Field<?>... keys);
 
     /**
@@ -92,6 +93,6 @@ public interface MergeKeyStepN<R extends Record> extends MergeValuesStepN<R> {
      * <code>PRIMARY KEY</code>.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     MergeValuesStepN<R> key(Collection<? extends Field<?>> keys);
 }

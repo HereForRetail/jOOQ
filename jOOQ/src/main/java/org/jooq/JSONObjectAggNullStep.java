@@ -48,6 +48,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
@@ -66,13 +67,13 @@ public interface JSONObjectAggNullStep<T> extends JSONObjectAggReturningStep<T> 
      * Include <code>NULL</code> values in output JSON.
      */
     @NotNull
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     JSONObjectAggReturningStep<T> nullOnNull();
 
     /**
      * Exclude <code>NULL</code> values in output JSON.
      */
     @NotNull
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     JSONObjectAggReturningStep<T> absentOnNull();
 }

@@ -50,6 +50,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -101,27 +102,27 @@ public interface WindowSpecificationExcludeStep extends WindowSpecificationFinal
      * Add an <code>EXCLUDE CURRENT ROW</code> clause.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationFinalStep excludeCurrentRow();
 
     /**
      * Add an <code>EXCLUDE GROUP</code> clause.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationFinalStep excludeGroup();
 
     /**
      * Add an <code>EXCLUDE TIES</code> clause.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationFinalStep excludeTies();
 
     /**
      * Add an <code>EXCLUDE NO OTHERS</code> clause.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationFinalStep excludeNoOthers();
 }

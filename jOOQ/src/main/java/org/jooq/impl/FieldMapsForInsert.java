@@ -44,6 +44,7 @@ import static org.jooq.Clause.INSERT_SELECT;
 import static org.jooq.Clause.INSERT_VALUES;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.conf.WriteIfReadonly.IGNORE;

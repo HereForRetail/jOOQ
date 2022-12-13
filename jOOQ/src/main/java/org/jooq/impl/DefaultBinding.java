@@ -74,6 +74,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -681,7 +682,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
         static final Set<SQLDialect> NEEDS_PRECISION_SCALE_ON_BIGDECIMAL = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB);
         static final Set<SQLDialect> REQUIRES_JSON_CAST                  = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
         static final Set<SQLDialect> NO_SUPPORT_ENUM_CAST                = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
-        static final Set<SQLDialect> NO_SUPPORT_NVARCHAR                 = SQLDialect.supportedBy(DERBY, FIREBIRD, POSTGRES, SQLITE, YUGABYTEDB);
+        static final Set<SQLDialect> NO_SUPPORT_NVARCHAR                 = SQLDialect.supportedBy(DERBY, FIREBIRD, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
 
 

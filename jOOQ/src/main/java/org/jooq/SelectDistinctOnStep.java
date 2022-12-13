@@ -51,6 +51,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -135,7 +136,7 @@ public interface SelectDistinctOnStep<R extends Record> extends SelectIntoStep<R
      * it is added explicitly via the jOOQ API.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     SelectIntoStep<R> on(SelectFieldOrAsterisk... fields);
 
     /**
@@ -146,7 +147,7 @@ public interface SelectDistinctOnStep<R extends Record> extends SelectIntoStep<R
      * it is added explicitly via the jOOQ API.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     SelectIntoStep<R> on(Collection<? extends SelectFieldOrAsterisk> fields);
 
     /**
@@ -154,7 +155,7 @@ public interface SelectDistinctOnStep<R extends Record> extends SelectIntoStep<R
      * <code>SELECT DISTINCT ON (…)</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     SelectIntoStep<R> distinctOn(SelectFieldOrAsterisk... fields);
 
     /**
@@ -162,6 +163,6 @@ public interface SelectDistinctOnStep<R extends Record> extends SelectIntoStep<R
      * <code>SELECT DISTINCT ON (…)</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     SelectIntoStep<R> distinctOn(Collection<? extends SelectFieldOrAsterisk> fields);
 }

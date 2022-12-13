@@ -58,6 +58,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
@@ -143,7 +144,7 @@ final class MetaImpl extends AbstractMeta {
     private static final JooqLogger      log                              = JooqLogger.getLogger(MetaImpl.class);
     private static final Set<SQLDialect> INVERSE_SCHEMA_CATALOG           = SQLDialect.supportedBy(MARIADB, MYSQL);
     private static final Set<SQLDialect> CURRENT_TIMESTAMP_COLUMN_DEFAULT = SQLDialect.supportedBy(MARIADB, MYSQL);
-    private static final Set<SQLDialect> EXPRESSION_COLUMN_DEFAULT        = SQLDialect.supportedBy(DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> EXPRESSION_COLUMN_DEFAULT        = SQLDialect.supportedBy(DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     private static final Set<SQLDialect> NO_SUPPORT_SCHEMAS               = SQLDialect.supportedBy(FIREBIRD, SQLITE);
 
 

@@ -65,6 +65,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -118,7 +119,7 @@ final class DeleteQueryImpl<R extends Record> extends AbstractDMLQuery<R> implem
     private static final Set<SQLDialect> SPECIAL_DELETE_AS_SYNTAX        = SQLDialect.supportedBy(MARIADB, MYSQL);
 
     // LIMIT is not supported at all
-    private static final Set<SQLDialect> NO_SUPPORT_LIMIT                = SQLDialect.supportedUntil(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> NO_SUPPORT_LIMIT                = SQLDialect.supportedUntil(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
     // LIMIT is supported but not ORDER BY
     private static final Set<SQLDialect> NO_SUPPORT_ORDER_BY_LIMIT       = SQLDialect.supportedBy(IGNITE);

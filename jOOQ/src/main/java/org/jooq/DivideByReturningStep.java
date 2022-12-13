@@ -59,6 +59,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -98,13 +99,13 @@ public interface DivideByReturningStep {
      * Specify the fields that you want the division to return from the dividend
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     Table<Record> returning(Field<?>... fields);
 
     /**
      * Specify the fields that you want the division to return from the dividend
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     Table<Record> returning(Collection<? extends Field<?>> fields);
 }

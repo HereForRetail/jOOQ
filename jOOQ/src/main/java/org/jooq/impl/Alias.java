@@ -68,6 +68,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -120,7 +121,7 @@ final class Alias<Q extends QueryPart> extends AbstractQueryPart implements UEmp
     private static final Clause[]        CLAUSES_TABLE_ALIAS                   = { TABLE, TABLE_ALIAS };
     private static final Clause[]        CLAUSES_FIELD_REFERENCE               = { FIELD, FIELD_REFERENCE };
     private static final Clause[]        CLAUSES_FIELD_ALIAS                   = { FIELD, FIELD_ALIAS };
-    private static final Set<SQLDialect> SUPPORT_AS_REQUIRED                   = SQLDialect.supportedBy(DERBY, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORT_AS_REQUIRED                   = SQLDialect.supportedBy(DERBY, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     private static final Set<SQLDialect> SUPPORT_DERIVED_COLUMN_NAMES_SPECIAL1 = SQLDialect.supportedBy(CUBRID, FIREBIRD, MYSQL);
     private static final Set<SQLDialect> SUPPORT_DERIVED_COLUMN_NAMES_SPECIAL2 = SQLDialect.supportedBy(IGNITE, MARIADB, MYSQL, SQLITE);
 

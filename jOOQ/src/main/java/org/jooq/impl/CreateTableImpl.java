@@ -65,6 +65,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -159,13 +160,13 @@ implements
     private static final Set<SQLDialect> NO_SUPPORT_IF_NOT_EXISTS           = SQLDialect.supportedBy(DERBY, FIREBIRD);
     private static final Set<SQLDialect> NO_SUPPORT_WITH_DATA               = SQLDialect.supportedBy(H2, MARIADB, MYSQL, SQLITE);
     private static final Set<SQLDialect> NO_SUPPORT_CTAS_COLUMN_NAMES       = SQLDialect.supportedBy(H2);
-    private static final Set<SQLDialect> EMULATE_INDEXES_IN_BLOCK           = SQLDialect.supportedBy(FIREBIRD, POSTGRES, YUGABYTEDB);
-    private static final Set<SQLDialect> EMULATE_SOME_ENUM_TYPES_AS_CHECK   = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_INDEXES_IN_BLOCK           = SQLDialect.supportedBy(FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_SOME_ENUM_TYPES_AS_CHECK   = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     private static final Set<SQLDialect> EMULATE_STORED_ENUM_TYPES_AS_CHECK = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, SQLITE);
     private static final Set<SQLDialect> REQUIRES_WITH_DATA                 = SQLDialect.supportedBy(HSQLDB);
     private static final Set<SQLDialect> WRAP_SELECT_IN_PARENS              = SQLDialect.supportedBy(HSQLDB);
-    private static final Set<SQLDialect> SUPPORT_TEMPORARY                  = SQLDialect.supportedBy(MARIADB, MYSQL, POSTGRES, YUGABYTEDB);
-    private static final Set<SQLDialect> EMULATE_COMMENT_IN_BLOCK           = SQLDialect.supportedBy(FIREBIRD, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORT_TEMPORARY                  = SQLDialect.supportedBy(MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_COMMENT_IN_BLOCK           = SQLDialect.supportedBy(FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB);
     private static final Set<SQLDialect> REQUIRE_EXECUTE_IMMEDIATE          = SQLDialect.supportedBy(FIREBIRD);
     private static final Set<SQLDialect> NO_SUPPORT_NULLABLE_PRIMARY_KEY    = SQLDialect.supportedBy(MARIADB, MYSQL);
     private static final Set<SQLDialect> REQUIRE_NON_PK_COLUMNS             = SQLDialect.supportedBy(IGNITE);

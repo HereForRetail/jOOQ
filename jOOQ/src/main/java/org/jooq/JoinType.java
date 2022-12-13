@@ -62,6 +62,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -109,14 +110,14 @@ public enum JoinType {
      * <code>RIGHT OUTER JOIN</code> two tables.
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     RIGHT_OUTER_JOIN("right outer join", "right outer join", "right join", true),
 
     /**
      * <code>FULL OUTER JOIN</code> two tables.
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     FULL_OUTER_JOIN("full outer join", "full outer join", "full join", true),
 
     /**
@@ -137,28 +138,28 @@ public enum JoinType {
      * <code>NATURAL RIGHT OUTER JOIN</code> two tables.
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     NATURAL_RIGHT_OUTER_JOIN("natural right outer join", "natural right outer join", "natural right join", false),
 
     /**
      * <code>NATURAL FULL OUTER JOIN</code> two tables.
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     NATURAL_FULL_OUTER_JOIN("natural full outer join", "natural full outer join", "natural full join", false),
 
     /**
      * <code>CROSS APPLY</code> two tables.
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     CROSS_APPLY("cross apply", false),
 
     /**
      * <code>OUTER APPLY</code> two tables.
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     OUTER_APPLY("outer apply", false),
 
     /**

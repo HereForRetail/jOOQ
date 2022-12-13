@@ -55,6 +55,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -135,7 +136,7 @@ public interface SelectIntoStep<R extends Record> extends SelectFromStep<R> {
      * statement to create a new table from a <code>SELECT</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     SelectFromStep<Record> into(Table<?> table);
 
 

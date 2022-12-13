@@ -52,6 +52,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -94,7 +95,7 @@ public interface OrderedAggregateFunction<T> {
      * aggregate function
      */
     @NotNull
-    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     AggregateFilterStep<T> withinGroupOrderBy(OrderField<?>... fields);
 
     /**
@@ -102,6 +103,6 @@ public interface OrderedAggregateFunction<T> {
      * aggregate function
      */
     @NotNull
-    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     AggregateFilterStep<T> withinGroupOrderBy(Collection<? extends OrderField<?>> fields);
 }

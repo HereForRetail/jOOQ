@@ -48,6 +48,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
@@ -133,7 +134,7 @@ public interface SelectForUpdateWaitStep<R extends Record> extends SelectForStep
      * @see SelectQuery#setForLockModeNoWait()
      */
     @NotNull @CheckReturnValue
-    @Support({ MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     SelectForStep<R> noWait();
 
     /**
@@ -143,6 +144,6 @@ public interface SelectForUpdateWaitStep<R extends Record> extends SelectForStep
      * @see SelectQuery#setForLockModeSkipLocked()
      */
     @NotNull @CheckReturnValue
-    @Support({ MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     SelectForStep<R> skipLocked();
 }

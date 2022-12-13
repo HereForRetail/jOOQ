@@ -42,6 +42,7 @@ import org.jetbrains.annotations.*;
 // ...
 import static org.jooq.SQLDialect.H2;
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
 /**
@@ -73,13 +74,13 @@ public interface DropTypeStep extends DropTypeFinalStep {
      * Add the <code>CASCADE</code> clause to the <code>DROP TYPE</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ H2, POSTGRES, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, YUGABYTEDB })
     DropTypeFinalStep cascade();
 
     /**
      * Add the <code>RESTRICT</code> clause to the <code>DROP TYPE</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ H2, POSTGRES, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, YUGABYTEDB })
     DropTypeFinalStep restrict();
 }

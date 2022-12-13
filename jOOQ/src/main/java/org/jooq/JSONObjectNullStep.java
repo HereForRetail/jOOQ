@@ -72,7 +72,7 @@ public interface JSONObjectNullStep<T> extends JSONObjectReturningStep<T> {
      * <p>
      * Include <code>NULL</code> values in output JSON.
      */
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     @NotNull @CheckReturnValue
     JSONObjectReturningStep<T> nullOnNull();
 
@@ -81,7 +81,7 @@ public interface JSONObjectNullStep<T> extends JSONObjectReturningStep<T> {
      * <p>
      * Exclude <code>NULL</code> values in output JSON.
      */
-    @Support({ H2, POSTGRES, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, YUGABYTEDB })
     @NotNull @CheckReturnValue
     JSONObjectReturningStep<T> absentOnNull();
 }

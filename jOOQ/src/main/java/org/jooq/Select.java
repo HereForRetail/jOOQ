@@ -56,6 +56,7 @@ import static org.jooq.SQLDialect.MARIADB;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -134,7 +135,7 @@ public interface Select<R extends Record> extends ResultQuery<R>, TableLike<R>, 
      *             {@link StackOverflowError} when generating the SQL.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     Select<R> except(Select<? extends R> select);
 
     /**
@@ -147,7 +148,7 @@ public interface Select<R extends Record> extends ResultQuery<R>, TableLike<R>, 
      *             {@link StackOverflowError} when generating the SQL.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     Select<R> exceptAll(Select<? extends R> select);
 
     /**
@@ -160,7 +161,7 @@ public interface Select<R extends Record> extends ResultQuery<R>, TableLike<R>, 
      *             {@link StackOverflowError} when generating the SQL.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, IGNITE, MARIADB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     Select<R> intersect(Select<? extends R> select);
 
     /**
@@ -173,7 +174,7 @@ public interface Select<R extends Record> extends ResultQuery<R>, TableLike<R>, 
      *             {@link StackOverflowError} when generating the SQL.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     Select<R> intersectAll(Select<? extends R> select);
 
     /**

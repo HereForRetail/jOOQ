@@ -55,6 +55,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -95,13 +96,13 @@ public interface CreateTableWithDataStep extends CreateTableOnCommitStep {
      * Add a <code>WITH DATA</code> clause.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     CreateTableCommentStep withData();
 
     /**
      * Add a <code>WITH DATA</code> clause.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     CreateTableCommentStep withNoData();
 }

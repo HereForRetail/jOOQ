@@ -55,6 +55,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.SQLITE;
 // ...
@@ -170,7 +171,7 @@ public enum DatePart {
      * The epoch in seconds since 1970-01-01.
      */
     @NotNull
-    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     EPOCH("epoch"),
 
     /**
@@ -191,7 +192,7 @@ public enum DatePart {
      * The day of the year. Corresponds to {@link ChronoField#DAY_OF_YEAR}.
      */
     @NotNull
-    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     DAY_OF_YEAR("day_of_year"),
 
     /**
@@ -199,7 +200,7 @@ public enum DatePart {
      * Corresponds to {@link ChronoField#DAY_OF_WEEK}, shifted by one day.
      */
     @NotNull
-    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     DAY_OF_WEEK("day_of_week"),
 
     /**
@@ -207,7 +208,7 @@ public enum DatePart {
      * Corresponds to {@link ChronoField#DAY_OF_WEEK}.
      */
     @NotNull
-    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     ISO_DAY_OF_WEEK("iso_day_of_week"),
 
     /**

@@ -45,6 +45,7 @@ import org.jetbrains.annotations.*;
 import static org.jooq.SQLDialect.H2;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
@@ -64,6 +65,6 @@ public interface JSONArrayAggReturningStep<T> extends AggregateFilterStep<T> {
      * function.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     AggregateFilterStep<T> returning(DataType<?> returning);
 }

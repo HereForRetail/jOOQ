@@ -58,6 +58,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
@@ -136,7 +137,7 @@ public interface SelectForUpdateStep<R extends Record> extends SelectForStep<R> 
      * @see SelectQuery#setForUpdate(boolean)
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     SelectForUpdateOfStep<R> forUpdate();
 
     /**
@@ -154,7 +155,7 @@ public interface SelectForUpdateStep<R extends Record> extends SelectForStep<R> 
      * @see SelectQuery#setForShare(boolean)
      */
     @NotNull @CheckReturnValue
-    @Support({ MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     SelectForUpdateOfStep<R> forShare();
 
     /**

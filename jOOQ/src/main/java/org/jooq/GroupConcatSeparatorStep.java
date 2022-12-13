@@ -55,6 +55,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 // ...
 // ...
@@ -74,6 +75,6 @@ public interface GroupConcatSeparatorStep extends AggregateFunction<String> {
      * Specify the separator on the <code>GROUP_CONCAT</code> function.
      */
     @NotNull
-    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     AggregateFunction<String> separator(String separator);
 }

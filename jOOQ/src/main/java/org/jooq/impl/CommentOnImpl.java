@@ -143,7 +143,7 @@ implements
 
 
 
-    private static final Set<SQLDialect> SUPPORTS_COMMENT_ON_VIEW = SQLDialect.supportedBy(FIREBIRD, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORTS_COMMENT_ON_VIEW = SQLDialect.supportedBy(FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB);
 
     @Override
     public final void accept(Context<?> ctx) {

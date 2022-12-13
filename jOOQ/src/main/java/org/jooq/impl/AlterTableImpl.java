@@ -72,6 +72,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -233,8 +234,8 @@ implements
     private static final Set<SQLDialect>     NO_SUPPORT_RENAME_QUALIFIED_TABLE     = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
     private static final Set<SQLDialect>     NO_SUPPORT_ALTER_TYPE_AND_NULL        = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
     private static final Set<SQLDialect>     NO_SUPPORT_DROP_CONSTRAINT            = SQLDialect.supportedBy(MARIADB, MYSQL);
-    private static final Set<SQLDialect>     REQUIRE_REPEAT_ADD_ON_MULTI_ALTER     = SQLDialect.supportedBy(FIREBIRD, MARIADB, MYSQL, POSTGRES, YUGABYTEDB);
-    private static final Set<SQLDialect>     REQUIRE_REPEAT_DROP_ON_MULTI_ALTER    = SQLDialect.supportedBy(FIREBIRD, MARIADB, MYSQL, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect>     REQUIRE_REPEAT_ADD_ON_MULTI_ALTER     = SQLDialect.supportedBy(FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB);
+    private static final Set<SQLDialect>     REQUIRE_REPEAT_DROP_ON_MULTI_ALTER    = SQLDialect.supportedBy(FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 

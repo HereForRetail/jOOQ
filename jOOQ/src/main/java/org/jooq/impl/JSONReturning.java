@@ -43,6 +43,7 @@ import static org.jooq.SQLDialect.H2;
 import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.impl.Keywords.K_RETURNING;
@@ -58,7 +59,7 @@ import org.jooq.impl.QOM.UTransient;
  * @author Lukas Eder
  */
 final class JSONReturning extends AbstractQueryPart implements SimpleQueryPart, UTransient {
-    static final Set<SQLDialect> NO_SUPPORT_RETURNING = SQLDialect.supportedBy(H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    static final Set<SQLDialect> NO_SUPPORT_RETURNING = SQLDialect.supportedBy(H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     final DataType<?>            type;
 
     JSONReturning(DataType<?> type) {

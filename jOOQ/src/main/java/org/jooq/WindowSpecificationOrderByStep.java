@@ -52,6 +52,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -103,13 +104,13 @@ public interface WindowSpecificationOrderByStep extends WindowSpecificationRowsS
      * Add an <code>ORDER BY</code> clause to the window specification.
      */
     @NotNull
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsStep orderBy(OrderField<?>... fields);
 
     /**
      * Add an <code>ORDER BY</code> clause to the window specification.
      */
     @NotNull
-    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsStep orderBy(Collection<? extends OrderField<?>> fields);
 }

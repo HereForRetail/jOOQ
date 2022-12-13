@@ -50,6 +50,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
@@ -84,20 +85,20 @@ public interface CreateTableIndexStep extends CreateTableOnCommitStep {
      * Add an index to the table.
      */
     @NotNull @CheckReturnValue
-    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     CreateTableIndexStep index(Index index);
 
     /**
      * Add indexes to the table.
      */
     @NotNull @CheckReturnValue
-    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     CreateTableIndexStep indexes(Index... indexes);
 
     /**
      * Add indexes to the table.
      */
     @NotNull @CheckReturnValue
-    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     CreateTableIndexStep indexes(Collection<? extends Index> indexes);
 }

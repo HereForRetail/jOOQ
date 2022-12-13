@@ -51,6 +51,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 // ...
 // ...
@@ -191,7 +192,7 @@ public interface DAO<R extends TableRecord<R>, P, T> {
      * @param object The POJO to be merged
      * @throws DataAccessException if something went wrong executing the query
      */
-    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     void merge(P object) throws DataAccessException;
 
     /**
@@ -201,7 +202,7 @@ public interface DAO<R extends TableRecord<R>, P, T> {
      * @throws DataAccessException if something went wrong executing the query
      * @see #update(Collection)
      */
-    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     void merge(P... objects) throws DataAccessException;
 
     /**
@@ -211,7 +212,7 @@ public interface DAO<R extends TableRecord<R>, P, T> {
      * @throws DataAccessException if something went wrong executing the query
      * @see #update(Object...)
      */
-    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     void merge(Collection<P> objects) throws DataAccessException;
 
     /**

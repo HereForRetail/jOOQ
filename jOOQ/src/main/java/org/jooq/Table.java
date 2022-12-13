@@ -64,6 +64,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -1259,7 +1260,7 @@ extends
      * @see #rightOuterJoin(TableLike)
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     TablePartitionByStep<Record> rightJoin(TableLike<?> table);
 
     /**
@@ -1279,7 +1280,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightJoin(SQL sql);
 
@@ -1300,7 +1301,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightJoin(String sql);
 
@@ -1322,7 +1323,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightJoin(String sql, Object... bindings);
 
@@ -1344,7 +1345,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightJoin(String sql, QueryPart... parts);
 
@@ -1359,7 +1360,7 @@ extends
      * @see #rightOuterJoin(Name)
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     TablePartitionByStep<Record> rightJoin(Name name);
 
     /**
@@ -1368,7 +1369,7 @@ extends
      * This is only possible where the underlying RDBMS supports it
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     TablePartitionByStep<Record> rightOuterJoin(TableLike<?> table);
 
     /**
@@ -1385,7 +1386,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightOuterJoin(SQL sql);
 
@@ -1403,7 +1404,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightOuterJoin(String sql);
 
@@ -1422,7 +1423,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightOuterJoin(String sql, Object... bindings);
 
@@ -1441,7 +1442,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TablePartitionByStep<Record> rightOuterJoin(String sql, QueryPart... parts);
 
@@ -1453,7 +1454,7 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     TablePartitionByStep<Record> rightOuterJoin(Name name);
 
     /**
@@ -1462,7 +1463,7 @@ extends
      * A synonym for {@link #fullOuterJoin(TableLike)}.
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     TableOnStep<Record> fullJoin(TableLike<?> table);
 
     /**
@@ -1476,7 +1477,7 @@ extends
      * escape literals when concatenated into SQL clauses!
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullJoin(SQL sql);
 
@@ -1491,7 +1492,7 @@ extends
      * escape literals when concatenated into SQL clauses!
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullJoin(String sql);
 
@@ -1506,7 +1507,7 @@ extends
      * escape literals when concatenated into SQL clauses!
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullJoin(String sql, Object... bindings);
 
@@ -1521,7 +1522,7 @@ extends
      * escape literals when concatenated into SQL clauses!
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullJoin(String sql, QueryPart... parts);
 
@@ -1531,7 +1532,7 @@ extends
      * A synonym for {@link #fullOuterJoin(Name)}.
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     TableOnStep<Record> fullJoin(Name name);
 
     /**
@@ -1540,7 +1541,7 @@ extends
      * This is only possible where the underlying RDBMS supports it
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     TableOnStep<Record> fullOuterJoin(TableLike<?> table);
 
     /**
@@ -1557,7 +1558,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullOuterJoin(SQL sql);
 
@@ -1575,7 +1576,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullOuterJoin(String sql);
 
@@ -1594,7 +1595,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullOuterJoin(String sql, Object... bindings);
 
@@ -1613,7 +1614,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     TableOnStep<Record> fullOuterJoin(String sql, QueryPart... parts);
 
@@ -1625,7 +1626,7 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     TableOnStep<Record> fullOuterJoin(Name name);
 
     /**
@@ -1960,7 +1961,7 @@ extends
      * this behaviour using the information provided in this query.
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> naturalRightOuterJoin(TableLike<?> table);
 
     /**
@@ -1978,7 +1979,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalRightOuterJoin(SQL sql);
 
@@ -1997,7 +1998,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalRightOuterJoin(String sql);
 
@@ -2017,7 +2018,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalRightOuterJoin(String sql, Object... bindings);
 
@@ -2037,7 +2038,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalRightOuterJoin(String sql, QueryPart... parts);
 
@@ -2050,7 +2051,7 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> naturalRightOuterJoin(Name name);
 
     /**
@@ -2060,7 +2061,7 @@ extends
      * this behaviour using the information provided in this query.
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> naturalFullOuterJoin(TableLike<?> table);
 
     /**
@@ -2078,7 +2079,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalFullOuterJoin(SQL sql);
 
@@ -2097,7 +2098,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalFullOuterJoin(String sql);
 
@@ -2117,7 +2118,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalFullOuterJoin(String sql, Object... bindings);
 
@@ -2137,7 +2138,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> naturalFullOuterJoin(String sql, QueryPart... parts);
 
@@ -2150,7 +2151,7 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ FIREBIRD, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> naturalFullOuterJoin(Name name);
 
     // -------------------------------------------------------------------------
@@ -2161,7 +2162,7 @@ extends
      * <code>CROSS APPLY</code> a table to this table.
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> crossApply(TableLike<?> table);
 
     /**
@@ -2176,7 +2177,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> crossApply(SQL sql);
 
@@ -2192,7 +2193,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> crossApply(String sql);
 
@@ -2209,7 +2210,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> crossApply(String sql, Object... bindings);
 
@@ -2226,7 +2227,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> crossApply(String sql, QueryPart... parts);
 
@@ -2236,14 +2237,14 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> crossApply(Name name);
 
     /**
      * <code>OUTER APPLY</code> a table to this table.
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> outerApply(TableLike<?> table);
 
     /**
@@ -2258,7 +2259,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> outerApply(SQL sql);
 
@@ -2274,7 +2275,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> outerApply(String sql);
 
@@ -2291,7 +2292,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> outerApply(String sql, Object... bindings);
 
@@ -2308,7 +2309,7 @@ extends
      * @see SQL
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     @PlainSQL
     Table<Record> outerApply(String sql, QueryPart... parts);
 
@@ -2318,7 +2319,7 @@ extends
      * @see DSL#table(Name)
      */
     @NotNull
-    @Support({ FIREBIRD, POSTGRES, YUGABYTEDB })
+    @Support({ FIREBIRD, POSTGRES, BIGQUERY, YUGABYTEDB })
     Table<Record> outerApply(Name name);
 
     /**
@@ -2468,7 +2469,7 @@ extends
      * value. In general, use primary keys, instead.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE })
     Field<RowId> rowid();
 
 
@@ -2927,7 +2928,7 @@ extends
      * This has been observed to work with all dialects
      */
     @NotNull
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     DivideByOnStep divideBy(Table<?> divisor);
 
     /**

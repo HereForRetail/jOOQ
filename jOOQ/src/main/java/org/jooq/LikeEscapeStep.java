@@ -76,7 +76,7 @@ public interface LikeEscapeStep extends Condition {
      * some_column LIKE 'A!%%' ESCAPE '!'
      * </code></pre>
      */
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, SQLITE })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE })
     @NotNull @CheckReturnValue
     Condition escape(char escape);
 }

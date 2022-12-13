@@ -46,6 +46,7 @@ import static org.jooq.SQLDialect.H2;
 import static org.jooq.SQLDialect.HSQLDB;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
 import java.util.Collection;
@@ -64,13 +65,13 @@ public interface ArrayAggOrderByStep<T> extends AggregateFilterStep<T> {
      * Add an <code>ORDER BY</code> clause to the function.
      */
     @NotNull
-    @Support({ H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     AggregateFilterStep<T> orderBy(OrderField<?>... fields);
 
     /**
      * Add an <code>ORDER BY</code> clause to the function.
      */
     @NotNull
-    @Support({ H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     AggregateFilterStep<T> orderBy(Collection<? extends OrderField<?>> fields);
 }

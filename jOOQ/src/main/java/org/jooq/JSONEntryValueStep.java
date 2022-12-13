@@ -45,6 +45,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
@@ -62,20 +63,20 @@ public interface JSONEntryValueStep {
      * The JSON entry value.
      */
     @NotNull
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <T> JSONEntry<T> value(T value);
 
     /**
      * The JSON entry value.
      */
     @NotNull
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <T> JSONEntry<T> value(Field<T> value);
 
     /**
      * The JSON entry value.
      */
     @NotNull
-    @Support({ H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <T> JSONEntry<T> value(Select<? extends Record1<T>> value);
 }

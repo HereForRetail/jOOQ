@@ -39,6 +39,7 @@ package org.jooq.util.postgres;
 
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
 import org.jooq.Condition;

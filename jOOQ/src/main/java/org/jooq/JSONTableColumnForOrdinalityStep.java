@@ -46,6 +46,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.YUGABYTEDB;
 
@@ -61,7 +62,7 @@ public interface JSONTableColumnForOrdinalityStep {
      * <code>COLUMNS</code> clause of the <code>JSON_TABLE</code> predicate.
      */
     @NotNull
-    @Support({ MARIADB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     JSONTableColumnsStep forOrdinality();
 
 }

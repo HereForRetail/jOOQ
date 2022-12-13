@@ -43,6 +43,7 @@ package org.jooq.impl;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.SQLITE;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.impl.DSL.name;
@@ -96,7 +97,7 @@ implements
     WindowExcludeStep<T>,
     WindowFunction<T>
 {
-    private static final Set<SQLDialect> SUPPORT_NO_PARENS_WINDOW_REFERENCE          = SQLDialect.supportedBy(MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORT_NO_PARENS_WINDOW_REFERENCE          = SQLDialect.supportedBy(MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
     // Other attributes
     WindowSpecificationImpl              windowSpecification;

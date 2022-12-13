@@ -50,6 +50,7 @@ import static org.jooq.SQLDialect.HSQLDB;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -90,20 +91,20 @@ public interface AlterTableRenameConstraintToStep {
      * Specify a new constraint name.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     AlterTableFinalStep to(Constraint newName);
 
     /**
      * Specify a new constraint name.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     AlterTableFinalStep to(Name newName);
 
     /**
      * Specify a new constraint name.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, H2, HSQLDB, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB })
     AlterTableFinalStep to(String newName);
 }

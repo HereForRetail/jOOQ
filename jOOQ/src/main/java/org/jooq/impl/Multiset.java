@@ -43,6 +43,7 @@ import static java.lang.Boolean.TRUE;
 import static org.jooq.SQLDialect.MYSQL;
 import static org.jooq.SQLDialect.*;
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.impl.DSL.jsonArray;
 import static org.jooq.impl.DSL.jsonEntry;

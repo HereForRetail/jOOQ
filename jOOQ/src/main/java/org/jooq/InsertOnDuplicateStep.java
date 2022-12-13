@@ -54,6 +54,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.SQLITE;
 // ...
@@ -106,14 +107,14 @@ public interface InsertOnDuplicateStep<R extends Record> extends InsertReturning
      * Add a <code>ON CONFLICT ON CONSTRAINT</code> clause to this INSERT statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     InsertOnConflictDoUpdateStep<R> onConflictOnConstraint(Constraint constraint);
 
     /**
      * Add a <code>ON CONFLICT ON CONSTRAINT</code> clause to this INSERT statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MYSQL, POSTGRES, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB })
     InsertOnConflictDoUpdateStep<R> onConflictOnConstraint(Name constraint);
 
     /**
@@ -177,7 +178,7 @@ public interface InsertOnDuplicateStep<R extends Record> extends InsertReturning
      * H2 supports this clause in MySQL mode.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     InsertOnDuplicateSetStep<R> onDuplicateKeyUpdate();
 
     /**

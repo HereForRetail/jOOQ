@@ -59,6 +59,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -89,8 +90,8 @@ final class Transformations {
 
     private static final Set<SQLDialect> NO_SUPPORT_IN_LIMIT              = SQLDialect.supportedBy(MARIADB, MYSQL);
     private static final Set<SQLDialect> SUPPORT_MISSING_TABLE_REFERENCES = SQLDialect.supportedBy();
-    private static final Set<SQLDialect> EMULATE_QUALIFY                  = SQLDialect.supportedBy(CUBRID, FIREBIRD, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
-    private static final Set<SQLDialect> EMULATE_ROWNUM                   = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_QUALIFY                  = SQLDialect.supportedBy(CUBRID, FIREBIRD, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_ROWNUM                   = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
     static final SelectQueryImpl<?> subqueryWithLimit(QueryPart source) {
         SelectQueryImpl<?> s;

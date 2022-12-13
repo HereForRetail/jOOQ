@@ -55,6 +55,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -95,6 +96,6 @@ public interface CreateTableAsStep<R extends Record> {
      * Add an <code>AS</code> clause to the <code>CREATE TABLE</code> statement.
      */
     @NotNull @CheckReturnValue
-    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ CUBRID, DERBY, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     CreateTableWithDataStep as(Select<? extends R> select);
 }

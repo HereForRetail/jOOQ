@@ -65,6 +65,7 @@ import static org.jooq.SQLDialect.IGNITE;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -181,11 +182,11 @@ final class UpdateQueryImpl<R extends Record> extends AbstractStoreQuery<R> impl
 
 
 
-    private static final Set<SQLDialect> SUPPORT_RVE_SET           = SQLDialect.supportedBy(H2, HSQLDB, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORT_RVE_SET           = SQLDialect.supportedBy(H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB);
     private static final Set<SQLDialect> REQUIRE_RVE_ROW_CLAUSE    = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
 
     // LIMIT is not supported at all
-    private static final Set<SQLDialect> NO_SUPPORT_LIMIT          = SQLDialect.supportedUntil(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> NO_SUPPORT_LIMIT          = SQLDialect.supportedUntil(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
     // LIMIT is supported but not ORDER BY
     private static final Set<SQLDialect> NO_SUPPORT_ORDER_BY_LIMIT = SQLDialect.supportedBy(IGNITE);

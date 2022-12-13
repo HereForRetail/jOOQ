@@ -63,6 +63,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 import static org.jooq.SQLDialect.SQLITE;
@@ -108,7 +109,7 @@ final class QuantifiedComparisonCondition extends AbstractCondition implements L
 
     private static final Clause[]         CLAUSES                          = { CONDITION, CONDITION_BETWEEN };
     private static final Set<SQLDialect>  NO_SUPPORT_QUANTIFIED_LIKE       = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, SQLITE);
-    private static final Set<SQLDialect>  NO_SUPPORT_QUANTIFIED_SIMILAR_TO = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect>  NO_SUPPORT_QUANTIFIED_SIMILAR_TO = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     private static final Set<SQLDialect>  SUPPORTS_QUANTIFIED_ARRAYS       = SQLDialect.supportedBy(POSTGRES);
 
     private final QuantifiedSelectImpl<?> query;

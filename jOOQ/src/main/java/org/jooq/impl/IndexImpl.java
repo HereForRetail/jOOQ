@@ -44,6 +44,7 @@ import static org.jooq.SQLDialect.MARIADB;
 // ...
 import static org.jooq.SQLDialect.MYSQL;
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -70,7 +71,7 @@ import org.jooq.impl.QOM.UNotYetImplemented;
  * @author Lukas Eder
  */
 class IndexImpl extends AbstractNamed implements Index, UNotYetImplemented {
-    private static final Set<SQLDialect>     NO_SUPPORT_INDEX_QUALIFICATION = SQLDialect.supportedBy(MARIADB, MYSQL, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect>     NO_SUPPORT_INDEX_QUALIFICATION = SQLDialect.supportedBy(MARIADB, MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB);
 
     private final Table<?>                   table;
     private final SortField<?>[]             fields;

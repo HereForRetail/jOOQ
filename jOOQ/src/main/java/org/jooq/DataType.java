@@ -60,6 +60,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -548,7 +549,7 @@ public interface DataType<T> extends Named {
      * Return a new data type like this, with a new collation.
      */
     @NotNull
-    @Support({ HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     DataType<T> collation(Collation collation);
 
     /**
@@ -582,7 +583,7 @@ public interface DataType<T> extends Named {
      * @return The new data type
      */
     @NotNull
-    @Support({ DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     DataType<T> identity(boolean identity);
 
     /**

@@ -57,6 +57,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -87,7 +88,7 @@ import org.jooq.Table;
  */
 final class SelectIsNull extends AbstractCondition implements QOM.SelectIsNull {
 
-    static final Set<SQLDialect> EMULATE_NULL_QUERY = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    static final Set<SQLDialect> EMULATE_NULL_QUERY = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
     final Select<?>              select;
 

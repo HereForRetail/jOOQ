@@ -50,6 +50,7 @@ import static org.jooq.SQLDialect.MARIADB;
 import static org.jooq.SQLDialect.MYSQL;
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 import static org.jooq.SQLDialect.SQLITE;
 // ...
@@ -96,7 +97,7 @@ public interface DerivedColumnList extends QueryPart {
      * form a common table expression.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <R extends Record> CommonTableExpression<R> as(ResultQuery<R> query);
 
     /**
@@ -108,7 +109,7 @@ public interface DerivedColumnList extends QueryPart {
      * supported.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <R extends Record> CommonTableExpression<R> asMaterialized(ResultQuery<R> query);
 
     /**
@@ -120,7 +121,7 @@ public interface DerivedColumnList extends QueryPart {
      * is not supported.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     <R extends Record> CommonTableExpression<R> asNotMaterialized(ResultQuery<R> query);
 
     // -------------------------------------------------------------------------

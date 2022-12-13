@@ -51,6 +51,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -103,7 +104,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rowsUnboundedPreceding();
 
     /**
@@ -111,7 +112,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rowsPreceding(int number);
 
     /**
@@ -119,7 +120,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rowsCurrentRow();
 
     /**
@@ -127,7 +128,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rowsUnboundedFollowing();
 
     /**
@@ -135,7 +136,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rowsFollowing(int number);
 
     /**
@@ -143,7 +144,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rowsBetweenUnboundedPreceding();
 
     /**
@@ -151,7 +152,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rowsBetweenPreceding(int number);
 
     /**
@@ -159,7 +160,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rowsBetweenCurrentRow();
 
     /**
@@ -167,7 +168,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rowsBetweenUnboundedFollowing();
 
     /**
@@ -175,7 +176,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rowsBetweenFollowing(int number);
 
     /**
@@ -183,7 +184,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rangeUnboundedPreceding();
 
     /**
@@ -191,7 +192,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rangePreceding(int number);
 
     /**
@@ -199,7 +200,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rangeCurrentRow();
 
     /**
@@ -207,7 +208,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rangeUnboundedFollowing();
 
     /**
@@ -215,7 +216,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep rangeFollowing(int number);
 
     /**
@@ -223,7 +224,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rangeBetweenUnboundedPreceding();
 
     /**
@@ -231,7 +232,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rangeBetweenPreceding(int number);
 
     /**
@@ -239,7 +240,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rangeBetweenCurrentRow();
 
     /**
@@ -247,7 +248,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rangeBetweenUnboundedFollowing();
 
     /**
@@ -255,7 +256,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ FIREBIRD, H2, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep rangeBetweenFollowing(int number);
 
     /**
@@ -263,7 +264,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep groupsUnboundedPreceding();
 
     /**
@@ -271,7 +272,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep groupsPreceding(int number);
 
     /**
@@ -279,7 +280,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep groupsCurrentRow();
 
     /**
@@ -287,7 +288,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep groupsUnboundedFollowing();
 
     /**
@@ -295,7 +296,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationExcludeStep groupsFollowing(int number);
 
     /**
@@ -303,7 +304,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep groupsBetweenUnboundedPreceding();
 
     /**
@@ -311,7 +312,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep groupsBetweenPreceding(int number);
 
     /**
@@ -319,7 +320,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * window specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep groupsBetweenCurrentRow();
 
     /**
@@ -327,7 +328,7 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep groupsBetweenUnboundedFollowing();
 
     /**
@@ -335,6 +336,6 @@ public interface WindowSpecificationRowsStep extends WindowSpecificationFinalSte
      * the window specification.
      */
     @NotNull
-    @Support({ H2, POSTGRES, SQLITE, YUGABYTEDB })
+    @Support({ H2, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB })
     WindowSpecificationRowsAndStep groupsBetweenFollowing(int number);
 }

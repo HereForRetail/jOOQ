@@ -94,6 +94,7 @@ import static org.jooq.SQLDialect.MYSQL;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 // ...
 // ...
 // ...
@@ -306,13 +307,13 @@ import org.jooq.tools.StringUtils;
 final class SelectQueryImpl<R extends Record> extends AbstractResultQuery<R> implements SelectQuery<R> {
     private static final JooqLogger      log                             = JooqLogger.getLogger(SelectQueryImpl.class);
     private static final Clause[]        CLAUSES                         = { SELECT };
-    static final Set<SQLDialect>         EMULATE_SELECT_INTO_AS_CTAS     = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
-    private static final Set<SQLDialect> SUPPORT_SELECT_INTO_TABLE       = SQLDialect.supportedBy(HSQLDB, POSTGRES, YUGABYTEDB);
+    static final Set<SQLDialect>         EMULATE_SELECT_INTO_AS_CTAS     = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> SUPPORT_SELECT_INTO_TABLE       = SQLDialect.supportedBy(HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 
     static final Set<SQLDialect>         NO_SUPPORT_WINDOW_CLAUSE        = SQLDialect.supportedUntil(CUBRID, DERBY, HSQLDB, IGNITE, MARIADB);
-    private static final Set<SQLDialect> OPTIONAL_FROM_CLAUSE            = SQLDialect.supportedBy(DEFAULT, H2, IGNITE, MARIADB, MYSQL, POSTGRES, SQLITE, YUGABYTEDB);
+    private static final Set<SQLDialect> OPTIONAL_FROM_CLAUSE            = SQLDialect.supportedBy(DEFAULT, H2, IGNITE, MARIADB, MYSQL, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
     private static final Set<SQLDialect> REQUIRES_DERIVED_TABLE_DML      = SQLDialect.supportedBy(MARIADB, MYSQL);
     private static final Set<SQLDialect> NO_IMPLICIT_GROUP_BY_ON_HAVING  = SQLDialect.supportedBy(SQLITE);
 
@@ -328,7 +329,7 @@ final class SelectQueryImpl<R extends Record> extends AbstractResultQuery<R> imp
 
     private static final Set<SQLDialect> SUPPORT_FULL_WITH_TIES          = SQLDialect.supportedBy(H2, MARIADB, POSTGRES);
     private static final Set<SQLDialect> EMULATE_DISTINCT_ON             = SQLDialect.supportedBy(DERBY, FIREBIRD, HSQLDB, MARIADB, MYSQL, SQLITE);
-    static final Set<SQLDialect>         NO_SUPPORT_FOR_UPDATE_OF_FIELDS = SQLDialect.supportedBy(MYSQL, POSTGRES, YUGABYTEDB);
+    static final Set<SQLDialect>         NO_SUPPORT_FOR_UPDATE_OF_FIELDS = SQLDialect.supportedBy(MYSQL, POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 

@@ -40,6 +40,7 @@ package org.jooq;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 
 import java.io.Serializable;
 

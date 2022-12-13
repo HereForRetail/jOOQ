@@ -50,6 +50,7 @@ import static org.jooq.SQLDialect.HSQLDB;
 // ...
 // ...
 import static org.jooq.SQLDialect.POSTGRES;
+import static org.jooq.SQLDialect.BIGQUERY;
 import static org.jooq.SQLDialect.YUGABYTEDB;
 import static org.jooq.impl.DefaultMetaProvider.meta;
 import static org.jooq.impl.Internal.createPathAlias;
@@ -108,7 +109,7 @@ implements
 
     private static final Clause[]        CLAUSES_TABLE_REFERENCE           = { TABLE, TABLE_REFERENCE };
     private static final Clause[]        CLAUSES_TABLE_ALIAS               = { TABLE, TABLE_ALIAS };
-    private static final Set<SQLDialect> NO_SUPPORT_QUALIFIED_TVF_CALLS    = SQLDialect.supportedBy(HSQLDB, POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> NO_SUPPORT_QUALIFIED_TVF_CALLS    = SQLDialect.supportedBy(HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB);
     private static final Set<SQLDialect> REQUIRES_TVF_TABLE_CONSTRUCTOR    = SQLDialect.supportedBy(HSQLDB);
 
 
