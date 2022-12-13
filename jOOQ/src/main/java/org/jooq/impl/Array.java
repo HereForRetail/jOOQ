@@ -68,7 +68,7 @@ import org.jooq.impl.QOM.UnmodifiableList;
  */
 final class Array<T> extends AbstractField<T[]> implements QOM.Array<T> {
 
-    private static final Set<SQLDialect> REQUIRES_CAST = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> REQUIRES_CAST = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
     private final FieldsImpl<Record>     fields;
 

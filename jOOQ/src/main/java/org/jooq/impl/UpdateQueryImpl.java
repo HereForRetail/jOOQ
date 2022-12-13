@@ -183,7 +183,7 @@ final class UpdateQueryImpl<R extends Record> extends AbstractStoreQuery<R> impl
 
 
     private static final Set<SQLDialect> SUPPORT_RVE_SET           = SQLDialect.supportedBy(H2, HSQLDB, POSTGRES, BIGQUERY, YUGABYTEDB);
-    private static final Set<SQLDialect> REQUIRE_RVE_ROW_CLAUSE    = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> REQUIRE_RVE_ROW_CLAUSE    = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
     // LIMIT is not supported at all
     private static final Set<SQLDialect> NO_SUPPORT_LIMIT          = SQLDialect.supportedUntil(CUBRID, DERBY, FIREBIRD, H2, HSQLDB, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);

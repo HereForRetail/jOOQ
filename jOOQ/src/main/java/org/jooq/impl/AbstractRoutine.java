@@ -178,7 +178,7 @@ implements
 
 
 
-    private static final Set<SQLDialect>      REQUIRE_SELECT_FROM                = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect>      REQUIRE_SELECT_FROM                = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
     private static final Set<SQLDialect>      REQUIRE_DISAMBIGUATE_OVERLOADS     = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
 
     // ------------------------------------------------------------------------

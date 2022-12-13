@@ -130,7 +130,7 @@ implements
 
 
 
-    private static final Set<SQLDialect> NO_SUPPORT_IF_EXISTS    = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> NO_SUPPORT_IF_EXISTS    = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 

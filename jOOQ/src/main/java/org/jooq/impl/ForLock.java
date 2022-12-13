@@ -102,7 +102,7 @@ final class ForLock extends AbstractQueryPart implements UNotYetImplemented {
 
 
     private static final Set<SQLDialect> EMULATE_FOR_UPDATE_WAIT_MY      = SQLDialect.supportedUntil(MYSQL);
-    private static final Set<SQLDialect> EMULATE_FOR_UPDATE_WAIT_PG      = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> EMULATE_FOR_UPDATE_WAIT_PG      = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
     QueryPartList<Field<?>>              forLockOf;
     TableList                            forLockOfTables;

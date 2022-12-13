@@ -125,7 +125,7 @@ final class DeleteQueryImpl<R extends Record> extends AbstractDMLQuery<R> implem
     private static final Set<SQLDialect> NO_SUPPORT_ORDER_BY_LIMIT       = SQLDialect.supportedBy(IGNITE);
     private static final Set<SQLDialect> SUPPORT_MULTITABLE_DELETE       = SQLDialect.supportedBy(MARIADB, MYSQL);
     private static final Set<SQLDialect> REQUIRE_REPEAT_FROM_IN_USING    = SQLDialect.supportedBy(MARIADB, MYSQL);
-    private static final Set<SQLDialect> NO_SUPPORT_REPEAT_FROM_IN_USING = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> NO_SUPPORT_REPEAT_FROM_IN_USING = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 

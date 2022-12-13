@@ -680,8 +680,8 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
      */
     abstract static class InternalBinding<T, U> implements org.jooq.Binding<T, U> {
         static final Set<SQLDialect> NEEDS_PRECISION_SCALE_ON_BIGDECIMAL = SQLDialect.supportedBy(CUBRID, DERBY, FIREBIRD, H2, HSQLDB);
-        static final Set<SQLDialect> REQUIRES_JSON_CAST                  = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
-        static final Set<SQLDialect> NO_SUPPORT_ENUM_CAST                = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        static final Set<SQLDialect> REQUIRES_JSON_CAST                  = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
+        static final Set<SQLDialect> NO_SUPPORT_ENUM_CAST                = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
         static final Set<SQLDialect> NO_SUPPORT_NVARCHAR                 = SQLDialect.supportedBy(DERBY, FIREBIRD, POSTGRES, BIGQUERY, SQLITE, YUGABYTEDB);
 
 
@@ -1165,7 +1165,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultArrayBinding<U> extends InternalBinding<Object[], U> {
-        private static final Set<SQLDialect> REQUIRES_ARRAY_CAST = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRES_ARRAY_CAST = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 
@@ -2437,7 +2437,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultDayToSecondBinding<U> extends InternalBinding<DayToSecond, U> {
-        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL       = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL       = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
         private static final Set<SQLDialect> REQUIRE_STANDARD_INTERVAL = SQLDialect.supportedBy(H2);
 
         DefaultDayToSecondBinding(DataType<DayToSecond> dataType, Converter<DayToSecond, U> converter) {
@@ -2701,7 +2701,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultEnumTypeBinding<U> extends InternalBinding<EnumType, U> {
-        private static final Set<SQLDialect> REQUIRE_ENUM_CAST = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRE_ENUM_CAST = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
         DefaultEnumTypeBinding(DataType<EnumType> dataType, Converter<EnumType, U> converter) {
             super(dataType, converter);
@@ -3714,7 +3714,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultRecordBinding<U> extends InternalBinding<Record, U> {
-        private static final Set<SQLDialect> REQUIRE_RECORD_CAST = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRE_RECORD_CAST = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
         DefaultRecordBinding(DataType<Record> dataType, Converter<Record, U> converter) {
             super(dataType, converter);
@@ -5546,7 +5546,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultYearToSecondBinding<U> extends InternalBinding<YearToSecond, U> {
-        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
         DefaultYearToSecondBinding(DataType<YearToSecond> dataType, Converter<YearToSecond, U> converter) {
             super(dataType, converter);
@@ -5626,7 +5626,7 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
     }
 
     static final class DefaultYearToMonthBinding<U> extends InternalBinding<YearToMonth, U> {
-        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL       = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+        private static final Set<SQLDialect> REQUIRE_PG_INTERVAL       = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
         private static final Set<SQLDialect> REQUIRE_STANDARD_INTERVAL = SQLDialect.supportedBy(H2);
 
         DefaultYearToMonthBinding(DataType<YearToMonth> dataType, Converter<YearToMonth, U> converter) {

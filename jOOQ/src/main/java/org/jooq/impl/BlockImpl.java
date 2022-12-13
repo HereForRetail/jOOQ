@@ -115,7 +115,7 @@ import org.jooq.impl.Tools.DataExtendedKey;
  */
 final class BlockImpl extends AbstractRowCountQuery implements Block {
     private static final Set<SQLDialect>  REQUIRES_EXECUTE_IMMEDIATE_ON_DDL = SQLDialect.supportedBy(FIREBIRD);
-    private static final Set<SQLDialect>  SUPPORTS_NULL_STATEMENT           = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect>  SUPPORTS_NULL_STATEMENT           = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
 
 

@@ -78,7 +78,7 @@ import org.jooq.impl.QOM.UNotYetImplemented;
  * @author Lukas Eder
  */
 final class FieldMapForUpdate extends AbstractQueryPartMap<Field<?>, Field<?>> implements UNotYetImplemented {
-    private static final Set<SQLDialect> CASTS_NEEDED       = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect> CASTS_NEEDED       = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
     private static final Set<SQLDialect> NO_SUPPORT_QUALIFY = SQLDialect.supportedBy(POSTGRES, SQLITE, YUGABYTEDB);
 
     private final Table<?>               table;

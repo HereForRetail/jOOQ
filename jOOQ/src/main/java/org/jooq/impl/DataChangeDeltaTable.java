@@ -89,7 +89,7 @@ implements
     QOM.DataChangeDeltaTable<R>
 {
 
-    private final Set<SQLDialect> EMULATE_USING_CTE = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private final Set<SQLDialect> EMULATE_USING_CTE = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
     private final ResultOption    resultOption;
     private final DMLQuery<R>     query;

@@ -78,7 +78,7 @@ import org.jooq.tools.jdbc.MockResultSet;
 abstract class AbstractResultQuery<R extends Record> extends AbstractQuery<R> implements ResultQueryTrait<R> {
     private static final JooqLogger        log                               = JooqLogger.getLogger(AbstractResultQuery.class);
 
-    private static final Set<SQLDialect>   REPORT_FETCH_SIZE_WITH_AUTOCOMMIT = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    private static final Set<SQLDialect>   REPORT_FETCH_SIZE_WITH_AUTOCOMMIT = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
 
     private int                            maxRows;
     private int                            fetchSize;

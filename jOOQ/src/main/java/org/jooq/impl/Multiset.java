@@ -107,7 +107,7 @@ import org.jooq.XMLAggOrderByStep;
  */
 final class Multiset<R extends Record> extends AbstractField<Result<R>> implements QOM.Multiset<R> {
 
-    static final Set<SQLDialect> NO_SUPPORT_JSON_COMPARE      = SQLDialect.supportedBy(POSTGRES, YUGABYTEDB);
+    static final Set<SQLDialect> NO_SUPPORT_JSON_COMPARE      = SQLDialect.supportedBy(POSTGRES, BIGQUERY, YUGABYTEDB);
     static final Set<SQLDialect> NO_SUPPORT_JSONB_COMPARE     = SQLDialect.supportedBy();
     static final Set<SQLDialect> NO_SUPPORT_XML_COMPARE       = SQLDialect.supportedBy(POSTGRES);
     static final Set<SQLDialect> FORCE_LIMIT_IN_DERIVED_TABLE = SQLDialect.supportedBy(MARIADB, MYSQL);
