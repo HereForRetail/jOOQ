@@ -112,13 +112,9 @@ enum CombineOperator {
     }
 
     public final Keyword toKeyword(SQLDialect dialect) {
-
-
-
-
-
-
-
+		if (this.equals(EXCEPT) && dialect.equals(SQLDialect.BIGQUERY)) {
+			return DSL.keyword("except distinct");
+		}
         return keyword;
     }
 }
