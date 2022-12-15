@@ -11,5 +11,6 @@ public class BigQueryDataType {
 
 	public static final DataType<String> STRING = new BuiltInDataType<>(FAMILY, SQLDataType.CLOB, "string");
 	public static final DataType<Double> FLOAT64 = new BuiltInDataType<>(FAMILY, SQLDataType.DOUBLE, "float64");
+	public static final DataType<Long> INT64 = new BuiltInDataType<>(FAMILY, SQLDataType.BIGINT, "int64");
 
 }

@@ -5420,6 +5420,10 @@ final class Tools {
 		if (type.getType() == Double.class || type.getType() == Float.class) {
 			return BigQueryDataType.FLOAT64;
 		}
+		if (type.getType() == Long.class || type.getType() == Integer.class || type.getType() == Short.class
+			|| type.getType() == Byte.class) {
+			return BigQueryDataType.INT64;
+		}
 		return type;
 	}
 
