@@ -160,6 +160,7 @@ import static org.jooq.tools.StringUtils.leftPad;
 import static org.jooq.tools.jdbc.JDBCUtils.safeFree;
 import static org.jooq.tools.jdbc.JDBCUtils.wasNull;
 import static org.jooq.tools.reflect.Reflect.onClass;
+import static org.jooq.util.bigquery.BigQueryUtils.toBQArrayString;
 import static org.jooq.util.postgres.PostgresUtils.toPGArray;
 import static org.jooq.util.postgres.PostgresUtils.toPGArrayString;
 import static org.jooq.util.postgres.PostgresUtils.toPGInterval;
@@ -1183,14 +1184,19 @@ public class DefaultBinding<T, U> implements Binding<T, U> {
 
             if (REQUIRES_ARRAY_CAST.contains(ctx.dialect())) {
 
-                // [#8933] In some cases, we cannot derive the cast type from
-                //         array type directly
-                DataType<?> arrayType =
-                    dataType.getType() == Object[].class
-                  ? getDataType(ctx.dialect(), deriveArrayTypeFromComponentType(value))
-                  : dataType;
+				if (ctx.dialect().equals(BIGQUERY)) {
+					ctx.render().sql(toBQArrayString(value));
+				}
+				else {
+					// [#8933] In some cases, we cannot derive the cast type from
+					//         array type directly
+					DataType<?> arrayType =
+						dataType.getType() == Object[].class
+							? getDataType(ctx.dialect(), deriveArrayTypeFromComponentType(value))
+							: dataType;
 
-                ctx.render().visit(cast(inline(PostgresUtils.toPGArrayString(value)), arrayType));
+					ctx.render().visit(cast(inline(PostgresUtils.toPGArrayString(value)), arrayType));
+				}
             }
 
 
