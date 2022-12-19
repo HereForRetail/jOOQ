@@ -38,12 +38,14 @@
 package org.jooq.impl;
 
 import static org.jooq.impl.Tools.CTX;
+import static org.jooq.impl.Tools.castToBigQuerySpecificTypeIfNeeded;
 import org.jooq.CharacterSet;
 import org.jooq.Collation;
 import org.jooq.Configuration;
 import org.jooq.DataType;
 import org.jooq.Field;
 import org.jooq.Nullability;
+import org.jooq.SQLDialect;
 import org.jooq.impl.QOM.GenerationOption;
 
 /**
@@ -123,7 +125,11 @@ final class ArrayDataType<T> extends DefaultDataType<T[]> {
 
     @Override
     public final String getTypeName(Configuration configuration) {
-        String typeName = elementType.getTypeName(configuration);
+		DataType<?> finalType = elementType;
+		if (configuration.dialect().equals(SQLDialect.BIGQUERY)) {
+			finalType = castToBigQuerySpecificTypeIfNeeded(elementType);
+		}
+        String typeName = finalType.getTypeName(configuration);
         return getArrayType(configuration, typeName);
     }
 
@@ -134,7 +140,11 @@ final class ArrayDataType<T> extends DefaultDataType<T[]> {
 
     @Override
     public final String getCastTypeName(Configuration configuration) {
-        String castTypeName = elementType.getCastTypeName(configuration);
+		DataType<?> finalType = elementType;
+		if (configuration.dialect().equals(SQLDialect.BIGQUERY)) {
+			finalType = castToBigQuerySpecificTypeIfNeeded(elementType);
+		}
+        String castTypeName = finalType.getCastTypeName(configuration);
         return getArrayType(configuration, castTypeName);
     }
 
