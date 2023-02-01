@@ -38,27 +38,15 @@
 package org.jooq.impl;
 
 import static org.jooq.impl.DSL.*;
-import static org.jooq.impl.Internal.*;
-import static org.jooq.impl.Keywords.*;
 import static org.jooq.impl.Names.*;
 import static org.jooq.impl.SQLDataType.*;
 import static org.jooq.impl.Tools.*;
 import static org.jooq.impl.Tools.BooleanDataKey.*;
-import static org.jooq.impl.Tools.DataExtendedKey.*;
-import static org.jooq.impl.Tools.DataKey.*;
 import static org.jooq.SQLDialect.*;
 
 import org.jooq.*;
-import org.jooq.Function1;
-import org.jooq.Record;
-import org.jooq.conf.*;
-import org.jooq.impl.*;
 import org.jooq.impl.QOM.*;
 import org.jooq.tools.*;
-
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
 
 
 /**
@@ -138,14 +126,30 @@ implements
 
             // [#13808] When using an array element reference as a store assignment
             //          target, the parentheses must not be rendered
-            if (array instanceof TableField || Boolean.TRUE.equals(ctx.data(DATA_STORE_ASSIGNMENT)))
-                ctx.visit(array).sql('[').visit(index).sql(']');
+            if (array instanceof TableField || Boolean.TRUE.equals(ctx.data(DATA_STORE_ASSIGNMENT))) {
+				ctx.visit(array);
+				generateSubscription(ctx);
+			}
 
             // [#12480] For expressions the parens might be required
-            else
-                ctx.sql('(').visit(array).sql(')').sql('[').visit(index).sql(']');
+            else {
+				ctx.sql('(').visit(array).sql(')');
+				generateSubscription(ctx);
+			}
         }
-    }
+
+		private void generateSubscription(Context<?> ctx) {
+			ctx.sql('[');
+			if (ctx.dialect() == BIGQUERY) {
+				ctx.sql("ordinal(").visit(index).sql(')');
+			} else {
+				ctx.visit(index);
+			}
+			ctx.sql(']');
+		}
+
+
+	}
 
 
 
