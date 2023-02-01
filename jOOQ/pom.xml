@@ -10,8 +10,8 @@
         <version>3.16.12</version>
     </parent>
 
-    <artifactId>jooq</artifactId>
-    <name>jOOQ</name>
+    <artifactId>jaaq</artifactId>
+    <name>jAAQ</name>
 
     <licenses>
         <license>
