@@ -1,0 +1,30 @@
+name: Build and Push release to Artifactory
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Build release with Maven
+        run: mvn clean package
+
+      - name: Push release to Artifactory
+        env:
+          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        run: |
+          mvn deploy \
+            -s .github/workflows/release-settings.xml \
+            -DaltDeploymentRepository=HereForRetailReleaseRepository::default::https://hereforretail.jfrog.io/artifactory/mvn-release/

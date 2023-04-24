@@ -1,0 +1,11 @@
+<settings>
+	<!-- the section below is used for login -->
+	<servers>
+		<!-- to push artifact on release -->
+		<server>
+			<id>HereForRetailReleaseRepository</id>
+			<username>${env.ARTIFACTORY_USERNAME}</username>
+			<password>${env.ARTIFACTORY_PASSWORD}</password>
+		</server>
+	</servers>
+</settings>
