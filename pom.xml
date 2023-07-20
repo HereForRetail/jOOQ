@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.h4r</groupId>
+	<groupId>io.mercio</groupId>
 	<artifactId>jooq</artifactId>
 	<name>jOOQ</name>
 	<version>3.16.12-SNAPSHOT</version>
