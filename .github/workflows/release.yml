@@ -1,13 +1,11 @@
 name: Build and Push release to Artifactory
 
-on:
-  pull_request:
-    types: [opened, reopened]
+on: pull_request
+
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    if: github.ref_type == 'tag'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
