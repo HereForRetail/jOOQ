@@ -178,12 +178,12 @@ implements
 
             case MYSQL:
             case SQLITE:
+			case BIGQUERY:
                 ctx.visit(function(N_JSON_EXTRACT, json.getDataType(), json, path));
                 break;
 
 
             case POSTGRES:
-            case BIGQUERY:
             case YUGABYTEDB:
                 ctx.visit(function(N_JSONB_PATH_QUERY_FIRST, json.getDataType(), castIfNeeded(json, JSONB), DSL.field("{0}::jsonpath", path)));
                 break;
