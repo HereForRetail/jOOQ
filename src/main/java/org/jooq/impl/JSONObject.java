@@ -139,10 +139,14 @@ implements
     @Override
     public final void accept(Context<?> ctx) {
         switch (ctx.family()) {
-
-
-            case POSTGRES:
             case BIGQUERY:
+				if (onNull == JSONOnNull.ABSENT_ON_NULL)
+					ctx.visit(unquotedName("json_strip_nulls")).sql('(');
+				ctx.visit(unquotedName("json_object")).sql('(').visit(QueryPartCollectionView.wrap(entries)).sql(')');
+				if (onNull == JSONOnNull.ABSENT_ON_NULL)
+					ctx.sql(')');
+				break;
+			case POSTGRES:
             case YUGABYTEDB:
                 if (onNull == JSONOnNull.ABSENT_ON_NULL)
                     ctx.visit(unquotedName(getDataType().getType() == JSONB.class ? "jsonb_strip_nulls" : "json_strip_nulls")).sql('(');

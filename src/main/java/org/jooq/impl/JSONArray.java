@@ -141,10 +141,22 @@ implements
         QueryPartCollectionView<Field<?>> mapped = QueryPartCollectionView.wrap((Collection<Field<?>>) fields).map(JSONEntryImpl.jsonCastMapper(ctx));
 
         switch (ctx.family()) {
+			case BIGQUERY:
+				if (onNull == JSONOnNull.ABSENT_ON_NULL && !mapped.isEmpty()) {
+					Row1[] rows = map(fields, f -> row(f), Row1[]::new);
+					Table<?> t = values(rows).as("t", "a");
+					Field<?> a = t.field("a");
+					ctx.visit(DSL.field(
+						select((Field<?>) (getDataType() == JSON ? jsonArrayAgg(a) : jsonbArrayAgg(a)))
+							.from(t)
+							.where(a.isNotNull())
+					));
+				}
+				else
+					ctx.visit(N_JSON_ARRAY).sql('(').visit(mapped).sql(')');
 
-
-            case POSTGRES:
-            case BIGQUERY:
+				break;
+			case POSTGRES:
             case YUGABYTEDB:
                 if (onNull == JSONOnNull.ABSENT_ON_NULL && !mapped.isEmpty()) {
                     Row1[] rows = map(fields, f -> row(f), Row1[]::new);
